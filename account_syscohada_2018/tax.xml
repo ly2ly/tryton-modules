@@ -1,0 +1,424 @@
+<?xml version="1.0"?>
+
+
+<!-- Tax Group -->
+<tryton>
+  <data>
+        <record id="vat_group_1" model="account.tax.group">
+            <field name="name">TVA recuperable sur Achat</field>
+            <field name="code">TVA-Ach</field>
+            <field name="kind">purchase</field>
+        </record> 
+        <record id="vat_group_2" model="account.tax.group">
+            <field name="name">TVA facturé sur Ventes</field>
+            <field name="code">TVA-Vte</field>
+            <field name="kind">sale</field>
+        </record>
+  </data>
+
+  <data>
+                <record id="vat_cod_1" model="account.tax.code.template">
+            <field name="name">DETERMINATION DE LA TVA DUE</field>
+            <field name="code">DETERMINATION DE LA TVA DUE</field>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_2" model="account.tax.code.template">
+            <field name="name">BASE TAXABLE TVA</field>
+            <field name="code">BASE TAXABLE TVA</field>
+            <field name="parent" ref="vat_cod_1"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_3" model="account.tax.code.template">
+            <field name="name">TOTAL ACHAT HT</field>
+            <field name="code">TOTAL ACHAT HT</field>
+            <field name="parent" ref="vat_cod_2"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_4" model="account.tax.code.template">
+            <field name="name">TOTAL CHIFFRE D'AFFAIRES HT</field>
+            <field name="code">TOTAL CHIFFRE D'AFFAIRES HT</field>
+            <field name="parent" ref="vat_cod_2"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_5" model="account.tax.code.template">
+            <field name="name">TOTAL TVA DUE</field>
+            <field name="code">TOTAL TVA DUE</field>
+            <field name="parent" ref="vat_cod_1"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_6" model="account.tax.code.template">
+            <field name="name">TOTAL TVA FACTUREE</field>
+            <field name="code">TOTAL TVA FACTUREE</field>
+            <field name="parent" ref="vat_cod_5"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_7" model="account.tax.code.template">
+            <field name="name">TOTAL TVA RECUPERABLE</field>
+            <field name="code">TOTAL TVA RECUPERABLE</field>
+            <field name="parent" ref="vat_cod_5"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_8" model="account.tax.code.template">
+            <field name="name">Achat HT d'immobilisation</field>
+            <field name="code">Achat HT d'immobilisation</field>
+            <field name="parent" ref="vat_cod_3"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_9" model="account.tax.code.template">
+            <field name="name">Achat HT</field>
+            <field name="code">Achat HT</field>
+            <field name="parent" ref="vat_cod_3"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_10" model="account.tax.code.template">
+            <field name="name">Achat HT de services extérieurs et autres charges</field>
+            <field name="code">Achat HT de services extérieurs et autres charges</field>
+            <field name="parent" ref="vat_cod_3"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_11" model="account.tax.code.template">
+            <field name="name">Achat HT de transport</field>
+            <field name="code">Achat HT de transport</field>
+            <field name="parent" ref="vat_cod_3"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_12" model="account.tax.code.template">
+            <field name="name">Achat HT factures non parvenues</field>
+            <field name="code">Achat HT factures non parvenues</field>
+            <field name="parent" ref="vat_cod_3"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_13" model="account.tax.code.template">
+            <field name="name">Achat HT transféré par d'autres entreprises</field>
+            <field name="code">Achat HT transféré par d'autres entreprises</field>
+            <field name="parent" ref="vat_cod_3"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_14" model="account.tax.code.template">
+            <field name="name">Chiffre d'affaires HT taxables sur prestations services</field>
+            <field name="code">Chiffre d'affaires HT taxables sur prestations services</field>
+            <field name="parent" ref="vat_cod_4"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_15" model="account.tax.code.template">
+            <field name="name">Chiffre d'affaires HT taxables sur travaux</field>
+            <field name="code">Chiffre d'affaires HT taxables sur travaux</field>
+            <field name="parent" ref="vat_cod_4"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_16" model="account.tax.code.template">
+            <field name="name">Chiffre d'affaires HT taxables sur ventes marchandises</field>
+            <field name="code">Chiffre d'affaires HT taxables sur ventes marchandises</field>
+            <field name="parent" ref="vat_cod_4"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_17" model="account.tax.code.template">
+            <field name="name">TVA 18% facturée sur prestations de services</field>
+            <field name="code">TVA 18% facturée sur prestations de services</field>
+            <field name="parent" ref="vat_cod_6"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_18" model="account.tax.code.template">
+            <field name="name">TVA 18% facturée sur travaux vendus</field>
+            <field name="code">TVA 18% facturée sur travaux vendus</field>
+            <field name="parent" ref="vat_cod_6"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_19" model="account.tax.code.template">
+            <field name="name">TVA 18% facturée sur ventes</field>
+            <field name="code">TVA 18% facturée sur ventes</field>
+            <field name="parent" ref="vat_cod_6"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_20" model="account.tax.code.template">
+            <field name="name">TVA 18% récupérable sur achat</field>
+            <field name="code">TVA 18% récupérable sur achat</field>
+            <field name="parent" ref="vat_cod_7"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_21" model="account.tax.code.template">
+            <field name="name">TVA 18% récupérable sur factures non parvenues</field>
+            <field name="code">TVA 18% récupérable sur factures non parvenues</field>
+            <field name="parent" ref="vat_cod_7"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_22" model="account.tax.code.template">
+            <field name="name">TVA 18% récupérable sur immobilisations</field>
+            <field name="code">TVA 18% récupérable sur immobilisations</field>
+            <field name="parent" ref="vat_cod_7"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_23" model="account.tax.code.template">
+            <field name="name">TVA 18% récupérable sur services ext. Et autres charges</field>
+            <field name="code">TVA 18% récupérable sur services ext. Et autres charges</field>
+            <field name="parent" ref="vat_cod_7"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_24" model="account.tax.code.template">
+            <field name="name">TVA 18% récupérable sur transport</field>
+            <field name="code">TVA 18% récupérable sur transport</field>
+            <field name="parent" ref="vat_cod_7"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_25" model="account.tax.code.template">
+            <field name="name">TVA 18% transférée par d'autres entreprises</field>
+            <field name="code">TVA 18% transférée par d'autres entreprises</field>
+            <field name="parent" ref="vat_cod_7"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_26" model="account.tax.code.template">
+            <field name="name">TVA 18% sur production livrée à soi-même</field>
+            <field name="code">TVA 18% sur production livrée à soi-même</field>
+            <field name="parent" ref="vat_cod_6"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_27" model="account.tax.code.template">
+            <field name="name">TVA 18% sur factures à établir</field>
+            <field name="code">TVA 18% sur factures à établir</field>
+            <field name="parent" ref="vat_cod_6"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_28" model="account.tax.code.template">
+            <field name="name">Chiffre d'affaires HT taxables sur production livrée à soi-même</field>
+            <field name="code">Chiffre d'affaires HT taxables sur production livrée à soi-même</field>
+            <field name="parent" ref="vat_cod_4"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+ 
+        <record id="vat_cod_29" model="account.tax.code.template">
+            <field name="name">Chiffre d'affaires HT taxables sur factures à établir</field>
+            <field name="code">Chiffre d'affaires HT taxables sur factures à établir</field>
+            <field name="parent" ref="vat_cod_4"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+  </data>
+
+  <data>
+        <record id="vat_tax_4" model="account.tax.template">
+            <field name="name">TVA 18% récupérable sur achat</field>
+            <field name="description">TVA 18% (Achats)</field>
+            <field name="group" ref="vat_group_1"/>
+            <field name="rate" eval="Decimal('.18')"/>
+            <field name="type">percentage</field>
+            <field name="invoice_account" ref="account_syscohada_2018_676"/>
+            <field name="credit_note_account" ref="account_syscohada_2018_676"/>
+            <field name="invoice_base_code" ref="vat_cod_9"/>
+            <field name="invoice_tax_code" ref="vat_cod_20"/>
+            <field name="invoice_base_sign" eval="Decimal('1')"/>
+            <field name="invoice_tax_sign" eval="Decimal('1')"/>
+            <field name="credit_note_base_code" ref="vat_cod_9"/>
+            <field name="credit_note_tax_code" ref="vat_cod_20"/>
+            <field name="credit_note_base_sign" eval="Decimal('-1')"/>
+            <field name="credit_note_tax_sign" eval="Decimal('-1')"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record> 
+        <record id="vat_tax_7" model="account.tax.template">
+            <field name="name">TVA 18% récupérable sur services ext. Et autres charges</field>
+            <field name="description">TVA 18% (Services Ext.)</field>
+            <field name="group" ref="vat_group_1"/>
+            <field name="rate" eval="Decimal('.18')"/>
+            <field name="type">percentage</field>
+            <field name="invoice_account" ref="account_syscohada_2018_678"/>
+            <field name="credit_note_account" ref="account_syscohada_2018_678"/>
+            <field name="invoice_base_code" ref="vat_cod_10"/>
+            <field name="invoice_tax_code" ref="vat_cod_23"/>
+            <field name="invoice_base_sign" eval="Decimal('1')"/>
+            <field name="invoice_tax_sign" eval="Decimal('1')"/>
+            <field name="credit_note_base_code" ref="vat_cod_10"/>
+            <field name="credit_note_tax_code" ref="vat_cod_23"/>
+            <field name="credit_note_base_sign" eval="Decimal('-1')"/>
+            <field name="credit_note_tax_sign" eval="Decimal('-1')"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record> 
+        <record id="vat_tax_8" model="account.tax.template">
+            <field name="name">TVA 18% récupérable sur transport</field>
+            <field name="description">TVA 18% (Transport)</field>
+            <field name="group" ref="vat_group_1"/>
+            <field name="rate" eval="Decimal('.18')"/>
+            <field name="type">percentage</field>
+            <field name="invoice_account" ref="account_syscohada_2018_677"/>
+            <field name="credit_note_account" ref="account_syscohada_2018_677"/>
+            <field name="invoice_base_code" ref="vat_cod_11"/>
+            <field name="invoice_tax_code" ref="vat_cod_24"/>
+            <field name="invoice_base_sign" eval="Decimal('1')"/>
+            <field name="invoice_tax_sign" eval="Decimal('1')"/>
+            <field name="credit_note_base_code" ref="vat_cod_11"/>
+            <field name="credit_note_tax_code" ref="vat_cod_24"/>
+            <field name="credit_note_base_sign" eval="Decimal('-1')"/>
+            <field name="credit_note_tax_sign" eval="Decimal('-1')"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record> 
+        <record id="vat_tax_6" model="account.tax.template">
+            <field name="name">TVA 18% récupérable sur immobilisations</field>
+            <field name="description">TVA 18% (Immobilisations)</field>
+            <field name="group" ref="vat_group_1"/>
+            <field name="rate" eval="Decimal('.18')"/>
+            <field name="type">percentage</field>
+            <field name="invoice_account" ref="account_syscohada_2018_675"/>
+            <field name="credit_note_account" ref="account_syscohada_2018_675"/>
+            <field name="invoice_base_code" ref="vat_cod_8"/>
+            <field name="invoice_tax_code" ref="vat_cod_22"/>
+            <field name="invoice_base_sign" eval="Decimal('1')"/>
+            <field name="invoice_tax_sign" eval="Decimal('1')"/>
+            <field name="credit_note_base_code" ref="vat_cod_8"/>
+            <field name="credit_note_tax_code" ref="vat_cod_22"/>
+            <field name="credit_note_base_sign" eval="Decimal('-1')"/>
+            <field name="credit_note_tax_sign" eval="Decimal('-1')"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record> 
+        <record id="vat_tax_5" model="account.tax.template">
+            <field name="name">TVA 18% récupérable sur factures non parvenues</field>
+            <field name="description">TVA 18% (Factures N. Parvenues)</field>
+            <field name="group" ref="vat_group_1"/>
+            <field name="rate" eval="Decimal('.18')"/>
+            <field name="type">percentage</field>
+            <field name="invoice_account" ref="account_syscohada_2018_679"/>
+            <field name="credit_note_account" ref="account_syscohada_2018_679"/>
+            <field name="invoice_base_code" ref="vat_cod_12"/>
+            <field name="invoice_tax_code" ref="vat_cod_21"/>
+            <field name="invoice_base_sign" eval="Decimal('1')"/>
+            <field name="invoice_tax_sign" eval="Decimal('1')"/>
+            <field name="credit_note_base_code" ref="vat_cod_12"/>
+            <field name="credit_note_tax_code" ref="vat_cod_21"/>
+            <field name="credit_note_base_sign" eval="Decimal('-1')"/>
+            <field name="credit_note_tax_sign" eval="Decimal('-1')"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record> 
+        <record id="vat_tax_9" model="account.tax.template">
+            <field name="name">TVA 18% transférée par d'autres entreprises</field>
+            <field name="description">TVA 18% (Transféré)</field>
+            <field name="group" ref="vat_group_1"/>
+            <field name="rate" eval="Decimal('.18')"/>
+            <field name="type">percentage</field>
+            <field name="invoice_account" ref="account_syscohada_2018_680"/>
+            <field name="credit_note_account" ref="account_syscohada_2018_680"/>
+            <field name="invoice_base_code" ref="vat_cod_13"/>
+            <field name="invoice_tax_code" ref="vat_cod_25"/>
+            <field name="invoice_base_sign" eval="Decimal('1')"/>
+            <field name="invoice_tax_sign" eval="Decimal('1')"/>
+            <field name="credit_note_base_code" ref="vat_cod_13"/>
+            <field name="credit_note_tax_code" ref="vat_cod_25"/>
+            <field name="credit_note_base_sign" eval="Decimal('-1')"/>
+            <field name="credit_note_tax_sign" eval="Decimal('-1')"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record> 
+        <record id="vat_tax_10" model="account.tax.template">
+            <field name="name">TVA 18% sur factures à établir</field>
+            <field name="description">TVA 18% (Factures à établir)</field>
+            <field name="group" ref="vat_group_2"/>
+            <field name="rate" eval="Decimal('.18')"/>
+            <field name="type">percentage</field>
+            <field name="invoice_account" ref="account_syscohada_2018_669"/>
+            <field name="credit_note_account" ref="account_syscohada_2018_669"/>
+            <field name="invoice_base_code" ref="vat_cod_29"/>
+            <field name="invoice_tax_code" ref="vat_cod_27"/>
+            <field name="invoice_base_sign" eval="Decimal('-1')"/>
+            <field name="invoice_tax_sign" eval="Decimal('-1')"/>
+            <field name="credit_note_base_code" ref="vat_cod_29"/>
+            <field name="credit_note_tax_code" ref="vat_cod_27"/>
+            <field name="credit_note_base_sign" eval="Decimal('1')"/>
+            <field name="credit_note_tax_sign" eval="Decimal('1')"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record> 
+        <record id="vat_tax_1" model="account.tax.template">
+            <field name="name">TVA 18% facturée sur prestations de services</field>
+            <field name="description">TVA 18% (Ventes Prestations)</field>
+            <field name="group" ref="vat_group_2"/>
+            <field name="rate" eval="Decimal('.18')"/>
+            <field name="type">percentage</field>
+            <field name="invoice_account" ref="account_syscohada_2018_666"/>
+            <field name="credit_note_account" ref="account_syscohada_2018_666"/>
+            <field name="invoice_base_code" ref="vat_cod_14"/>
+            <field name="invoice_tax_code" ref="vat_cod_17"/>
+            <field name="invoice_base_sign" eval="Decimal('-1')"/>
+            <field name="invoice_tax_sign" eval="Decimal('-1')"/>
+            <field name="credit_note_base_code" ref="vat_cod_14"/>
+            <field name="credit_note_tax_code" ref="vat_cod_17"/>
+            <field name="credit_note_base_sign" eval="Decimal('1')"/>
+            <field name="credit_note_tax_sign" eval="Decimal('1')"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record> 
+        <record id="vat_tax_11" model="account.tax.template">
+            <field name="name">TVA 18% sur production livrée à soi-même</field>
+            <field name="description">TVA 18% (Production LSM)</field>
+            <field name="group" ref="vat_group_2"/>
+            <field name="rate" eval="Decimal('.18')"/>
+            <field name="type">percentage</field>
+            <field name="invoice_account" ref="account_syscohada_2018_668"/>
+            <field name="credit_note_account" ref="account_syscohada_2018_668"/>
+            <field name="invoice_base_code" ref="vat_cod_28"/>
+            <field name="invoice_tax_code" ref="vat_cod_26"/>
+            <field name="invoice_base_sign" eval="Decimal('1')"/>
+            <field name="invoice_tax_sign" eval="Decimal('1')"/>
+            <field name="credit_note_base_code" ref="vat_cod_28"/>
+            <field name="credit_note_tax_code" ref="vat_cod_26"/>
+            <field name="credit_note_base_sign" eval="Decimal('-1')"/>
+            <field name="credit_note_tax_sign" eval="Decimal('-1')"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record> 
+        <record id="vat_tax_2" model="account.tax.template">
+            <field name="name">TVA 18% facturée sur travaux vendus</field>
+            <field name="description">TVA 18% (Ventes Travaux)</field>
+            <field name="group" ref="vat_group_2"/>
+            <field name="rate" eval="Decimal('.18')"/>
+            <field name="type">percentage</field>
+            <field name="invoice_account" ref="account_syscohada_2018_667"/>
+            <field name="credit_note_account" ref="account_syscohada_2018_667"/>
+            <field name="invoice_base_code" ref="vat_cod_15"/>
+            <field name="invoice_tax_code" ref="vat_cod_18"/>
+            <field name="invoice_base_sign" eval="Decimal('-1')"/>
+            <field name="invoice_tax_sign" eval="Decimal('-1')"/>
+            <field name="credit_note_base_code" ref="vat_cod_15"/>
+            <field name="credit_note_tax_code" ref="vat_cod_18"/>
+            <field name="credit_note_base_sign" eval="Decimal('1')"/>
+            <field name="credit_note_tax_sign" eval="Decimal('1')"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record> 
+        <record id="vat_tax_3" model="account.tax.template">
+            <field name="name">TVA 18% facturée sur ventes</field>
+            <field name="description">TVA 18% (Ventes)</field>
+            <field name="group" ref="vat_group_2"/>
+            <field name="rate" eval="Decimal('.18')"/>
+            <field name="type">percentage</field>
+            <field name="invoice_account" ref="account_syscohada_2018_665"/>
+            <field name="credit_note_account" ref="account_syscohada_2018_665"/>
+            <field name="invoice_base_code" ref="vat_cod_16"/>
+            <field name="invoice_tax_code" ref="vat_cod_19"/>
+            <field name="invoice_base_sign" eval="Decimal('-1')"/>
+            <field name="invoice_tax_sign" eval="Decimal('-1')"/>
+            <field name="credit_note_base_code" ref="vat_cod_16"/>
+            <field name="credit_note_tax_code" ref="vat_cod_19"/>
+            <field name="credit_note_base_sign" eval="Decimal('1')"/>
+            <field name="credit_note_tax_sign" eval="Decimal('1')"/>
+            <field name="account" ref="account_syscohada_2018_1"/>
+        </record>
+  </data>
+</tryton> 
+

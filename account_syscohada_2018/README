@@ -1,0 +1,29 @@
+The account_syscohada_2018 module of the Tryton application platform.
+
+The module generates french chart of accounts / chart of taxes.
+
+Installing
+----------
+
+Install module with pip
+
+Support
+-------
+
+If you encounter any problems with Tryton, please don't hesitate to ask
+questions Africa Performances infos email: infos@africaperformances-ci.com
+
+License
+-------
+
+See LICENSE
+
+Copyright
+---------
+
+See COPYRIGHT
+
+
+For more information please visit :
+
+  https://www.africaperformances-ci.com/
