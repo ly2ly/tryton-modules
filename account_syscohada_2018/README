@@ -5,7 +5,8 @@ The module generates french chart of accounts / chart of taxes.
 Installing
 ----------
 
-Install module with pip
+Install module with pip:
+pip install path_to/account_syscohada_2018/
 
 Support
 -------
